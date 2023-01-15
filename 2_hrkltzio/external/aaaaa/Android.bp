@@ -1,0 +1,16 @@
+//HRKLTZIO
+// Build a command line tool.
+cc_binary {
+    // Every module must have a name property, and the value must be unique 
+    // across all Android.bp files, except for the name property values in 
+    // namespaces and prebuilt modules, which may repeat.Every module must 
+    // have a name property, and the value must be unique across all Android.bp 
+    // files, except for the name property values in namespaces and prebuilt 
+    // modules, which may repeat.
+    name: "aaaaa",
+    cflags: [ "-Wall", "-Werror" ],
+    shared_libs: [],
+    // Allows the application to be placed in /system.
+    product_specific: true,
+    srcs: ["main.cpp"]
+}
