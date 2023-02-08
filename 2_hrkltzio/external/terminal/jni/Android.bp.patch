@@ -1,0 +1,8 @@
+@@ -3,6 +3,7 @@
+ }
+ 
+ cc_library_shared {
++    system_ext_specific: true,
+     name: "libjni_terminal",
+ 
+     srcs: [

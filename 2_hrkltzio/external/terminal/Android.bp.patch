@@ -1,0 +1,8 @@
+@@ -6,6 +6,7 @@
+     "jni",
+ ]
+ android_app {
++    system_ext_specific: true,
+     name: "Terminal",
+     srcs: ["src/**/*.java"],
+     static_libs: ["androidx.viewpager_viewpager"],
