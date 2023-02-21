@@ -1,0 +1,31 @@
+// Build a command line / native module.
+// Source:
+//   https://android.googlesource.com/platform/build/soong/+/master/android/module.go
+cc_binary {
+    // Every module must have a name property, and the value must be unique across all 
+    // Android.bp files, except for the name property values in namespaces and prebuilt modules, 
+    // which may repeat. Every module must have a name property, and the value must be unique 
+    // across all Android.bp files, except for the name property values in namespaces and 
+    // prebuilt modules, which may repeat.
+    name: "nativeExample",
+    cflags: [ "-Wall", "-Werror" ],
+    shared_libs: [],
+    // There are four dfferent option to place the package:
+    //   product_specific: true,
+    //     For modules which are specific to a software configuration of a product (e.g. country,
+	//     network operator, etc). When set to true, it is installed into `/product` (or
+	//     `/system/product` if product partition does not exist).
+    //   system_ext_specific: true,
+    //     For modules which extends system. When set to true, it is installed into `/system_ext`
+	//     (or `/system/system_ext` if system_ext partition does not exist).
+    //   device_specific: true,
+    //     For device specific modules, not only for SoC, but also for off-chip peripherals. When 
+    //     set to true, it is installed into `/odm` (or `/vendor/odm` if odm partition does not 
+    //     exist, or /system/vendor/odm if both odm and vendor partitions do not exist). This 
+    //     implies `soc_specific:true`.
+    //   soc_specific: true,
+    //     Whether this module is specific to an SoC (System-On-a-Chip). When set to true,
+	//     it is installed into `/vendor` (or `/system/vendor` if vendor partition does not exist).
+    system_ext_specific: true,
+    srcs: ["main.cpp"]
+}

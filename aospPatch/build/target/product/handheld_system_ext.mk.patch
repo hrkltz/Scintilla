@@ -1,0 +1,9 @@
+@@ -19,6 +19,8 @@
+ # it definitely doesn't belong on other types of devices (if it
+ # does, use base_system_ext.mk).
+ $(call inherit-product, $(SRC_TARGET_DIR)/product/media_system_ext.mk)
++$(warning HRKLTZ build/target/product/handheld_system_ext.mk)
++$(call inherit-product, vendor/hrkltz/handheld_system_ext.mk)
+ 
+ # /system_ext packages
+ PRODUCT_PACKAGES += \
